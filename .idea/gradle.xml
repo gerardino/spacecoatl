@@ -7,8 +7,8 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
-            <option value="C:\Users\30142444\Documents\Varios\SpaceApp\spacecotal" />
-            <option value="C:\Users\30142444\Documents\Varios\SpaceApp\spacecotal\app" />
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
           </set>
         </option>
       </GradleProjectSettings>
