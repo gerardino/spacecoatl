@@ -16,6 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.spacecoatl.app.Card"
+            android:label="@string/title_activity_card" >
+        </activity>
+        <activity
+            android:name="com.example.spacecoatl.app.Notification"
+            android:label="@string/title_activity_notification"
+            android:parentActivityName="com.example.spacecoatl.app.Card" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="Card" />
+        </activity>
     </application>
 
 </manifest>
