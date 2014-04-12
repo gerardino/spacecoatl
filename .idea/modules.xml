@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/spacecoatl.iml" filepath="$PROJECT_DIR$/spacecoatl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spacecoatl.iml" filepath="$PROJECT_DIR$/spacecoatl.iml" />
       <module fileurl="file://$PROJECT_DIR$/spacecotal.iml" filepath="$PROJECT_DIR$/spacecotal.iml" />
     </modules>
   </component>
