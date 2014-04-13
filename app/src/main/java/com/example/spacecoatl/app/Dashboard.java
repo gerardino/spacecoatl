@@ -8,7 +8,10 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TableLayout;
 import android.widget.TextView;
+
+import com.example.spacecoatl.app.components.NotificationRowGenerator;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -29,6 +32,8 @@ public class Dashboard extends Fragment {
     BroadcastReceiver _broadcastReceiver;
     private TextView _tvTime;
 
+    NotificationRowGenerator nrg;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -42,6 +47,14 @@ public class Dashboard extends Fragment {
         // }
         //});
         return view;
+
+        nrg = new NotificationRowGenerator(this.getApplicationContext(), _sdfWatchTime);
+
+        _tvTime = (TextView)findViewById(R.id._tvTime);
+        _tvTime.setText(_sdfWatchTime.format(new Date()));
+
+        TableLayout tl = (TableLayout)(findViewById(R.id.notificationTable));
+        tl.addView(nrg.getNotificationRow("Hello world", "This is a quick test to see if stuff can be created"));
     }
 
     @Override

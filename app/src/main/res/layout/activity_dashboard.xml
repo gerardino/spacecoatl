@@ -34,45 +34,25 @@
 
         <TableLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            android:id="@+id/notificationTable"
+            >
+
+
 
             <TableRow
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="fill_parent">
 
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent">
 
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:text="Medium Text"
-                            android:id="@+id/textView3" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:text="Small Text"
-                            android:id="@+id/textView4" />
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="9:58"
-                        android:id="@+id/textView2" />
-                </LinearLayout>
-            </TableRow>
+                </TableRow>
         </TableLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/notificationIconHolder"></LinearLayout>
     </LinearLayout>
 </RelativeLayout>
