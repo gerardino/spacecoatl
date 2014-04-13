@@ -24,7 +24,7 @@
         android:layout_height="match_parent"
         android:layout_weight=".7"
         android:id="@+id/activities"
-        class="com.example.spacecoatl.app.Card"
+        class="com.example.spacecoatl.app.Notification"
         />
 
 
