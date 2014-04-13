@@ -12,64 +12,59 @@ import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import android.app.Activity;
+import android.app.Fragment;
+
+import android.app.Fragment;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 
 
-public class Dashboard extends Activity {
-
+public class Dashboard extends Fragment {
+    //private OnItemSelectedListener listener;
     private final SimpleDateFormat _sdfWatchTime = new SimpleDateFormat("HH:mm");
     BroadcastReceiver _broadcastReceiver;
     private TextView _tvTime;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard);
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.dashboard, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.activity_dashboard,
+                container, false);
+        //Button button = (Button) view.findViewById(R.id.button1);
+        //button.setOnClickListener(new View.OnClickListener() {
+        //  @Override
+        // public void onClick(View v) {
+        //   updateDetail();
+        // }
+        //});
+        return view;
     }
 
     @Override
-    public void onStart()
-    {
+    public void onStart() {
         super.onStart();
         _broadcastReceiver = new BroadcastReceiver() {
             @Override
-            public void onReceive(Context ctx, Intent intent)
-            {
+            public void onReceive(Context ctx, Intent intent) {
                 if (intent.getAction().compareTo(Intent.ACTION_TIME_TICK) == 0) {
                     _tvTime.setText(_sdfWatchTime.format(new Date()));
                 }
             }
         };
 
-        registerReceiver(_broadcastReceiver, new IntentFilter(Intent.ACTION_TIME_TICK));
+        getActivity().registerReceiver(_broadcastReceiver, new IntentFilter(Intent.ACTION_TIME_TICK));
+
     }
 
     @Override
-    public void onStop()
-    {
+    public void onStop() {
         super.onStop();
         if (_broadcastReceiver != null)
-            unregisterReceiver(_broadcastReceiver);
-    }
+            getActivity().unregisterReceiver(_broadcastReceiver);
 
+    }
 }

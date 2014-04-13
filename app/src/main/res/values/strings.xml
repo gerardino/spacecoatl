@@ -7,5 +7,7 @@
     <string name="title_activity_card">Card</string>
     <string name="title_activity_notification">Notification</string>
     <string name="title_activity_dashboard">Dashboard</string>
+    <string name="landscape_message">This is Landscape mode fragment</string>
+    <string name="portrait_message">This is Portrait mode fragment</string>
 
 </resources>
