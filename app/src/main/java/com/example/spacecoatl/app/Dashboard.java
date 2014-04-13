@@ -46,15 +46,17 @@ public class Dashboard extends Fragment {
         //   updateDetail();
         // }
         //});
-        return view;
 
-        nrg = new NotificationRowGenerator(this.getApplicationContext(), _sdfWatchTime);
 
-        _tvTime = (TextView)findViewById(R.id._tvTime);
+        nrg = new NotificationRowGenerator(view.getContext(), _sdfWatchTime);
+
+        _tvTime = (TextView)view.findViewById(R.id._tvTime);
         _tvTime.setText(_sdfWatchTime.format(new Date()));
 
-        TableLayout tl = (TableLayout)(findViewById(R.id.notificationTable));
+        TableLayout tl = (TableLayout)(view.findViewById(R.id.notificationTable));
         tl.addView(nrg.getNotificationRow("Hello world", "This is a quick test to see if stuff can be created"));
+
+        return view;
     }
 
     @Override
