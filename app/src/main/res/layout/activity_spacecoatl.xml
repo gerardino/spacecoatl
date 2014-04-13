@@ -39,7 +39,6 @@
             android:orientation="horizontal"
             android:padding="@dimen/abc_action_bar_icon_vertical_padding"
             android:background="@drawable/background_bottom"
-
             >
             <Button
                 android:layout_width="0dp"
@@ -76,7 +75,6 @@
                 android:background="@android:color/transparent"
                 android:layout_marginLeft="5dp"
                 />
-
             </LinearLayout>
     </LinearLayout>
 </LinearLayout>

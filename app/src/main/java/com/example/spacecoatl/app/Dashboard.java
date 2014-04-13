@@ -5,9 +5,17 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.ColorFilter;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
@@ -48,6 +56,42 @@ public class Dashboard extends Fragment {
         TableLayout tl = (TableLayout)(view.findViewById(R.id.notificationTable));
         tl.addView(nrg.getNotificationRow("Hello world", "This is a quick test to see if stuff can be created"));
 
+//        notificationIconHolder
+
+        LinearLayout iconHolder = (LinearLayout)view.findViewById(R.id.notificationIconHolder);
+
+        final float scale = view.getContext().getResources().getDisplayMetrics().density;
+        int pixels = (int) (25 * scale + 0.5f);
+
+        int[] iconsToLoad = new int[] { R.drawable.glyphicons_073_wifi,
+                R.drawable.glyphicons_012_heart,
+                R.drawable.glyphicons_205_electricity,
+                R.drawable.glyphicons_252_oxygen_bottle};
+
+        float[] colorMatrix_Negative = {
+                -1.0f, 0, 0, 0, 255, //red
+                0, -1.0f, 0, 0, 255, //green
+                0, 0, -1.0f, 0, 255, //blue
+                0, 0, 0, 1.0f, 0 //alpha
+        };
+
+        for(int i = 0; i < iconsToLoad.length; i++){
+            //To generate negative image
+            Paint MyPaint_Normal = new Paint();
+            Paint MyPaint_Negative = new Paint();
+            ColorFilter colorFilter_Negative = new ColorMatrixColorFilter(colorMatrix_Negative);
+
+            Drawable d = view.getResources().getDrawable(iconsToLoad[i]);
+            d.setColorFilter(colorFilter_Negative);
+
+            ImageView img = new ImageView(getActivity());
+            img.setImageDrawable(d);
+//            img.setPadding(pixels/5, pixels/5, pixels/5, pixels/5);
+            img.setMinimumWidth(pixels);
+            img.setMinimumHeight(pixels);
+
+            iconHolder.addView(img);
+        }
         return view;
     }
 

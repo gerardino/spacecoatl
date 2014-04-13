@@ -34,23 +34,18 @@
                 android:layout_gravity="center" />
         </FrameLayout>
 
-        <TableLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:id="@+id/notificationTable"
-            >
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="fill_parent">
-
-                </TableRow>
-        </TableLayout>
-
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:id="@+id/notificationIconHolder"></LinearLayout>
+            android:layout_height="22dp"
+            android:padding="5dp"
+            android:id="@+id/notificationIconHolder">
+        </LinearLayout>
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/notificationTable"
+            >
+        </TableLayout>
     </LinearLayout>
 </RelativeLayout>
