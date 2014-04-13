@@ -1,9 +1,11 @@
 package com.example.spacecoatl.app.components;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TableRow;
 import android.widget.TextView;
 
@@ -26,7 +28,7 @@ public class NotificationRowGenerator {
         this.sdf = sdf;
     }
 
-    public TableRow getNotificationRow(String title, String text, Date datetime) {
+    public TableRow getNotificationRow(String title, String text, Date datetime, Integer imageAsset) {
         LayoutInflater inflater = (LayoutInflater)context.getSystemService( Context.LAYOUT_INFLATER_SERVICE );
 
         TableRow row = (TableRow)inflater.inflate( R.layout.component_notification_row, null );
@@ -36,11 +38,19 @@ public class NotificationRowGenerator {
         if (datetime != null){
             ((TextView)(row.findViewById(R.id.notificationTime))).setText(sdf.format(datetime));
         }
+        if (imageAsset != null){
+            Drawable d =row.getResources().getDrawable(imageAsset);
+            ((ImageView) (row.findViewById(R.id.image_badge))).setImageDrawable(UtilFunctions.InvertDrawable(d));
+        }
 
         return row;
     }
 
-    public TableRow getNotificationRow(String title, String text){
-        return getNotificationRow(title, text, null);
+    public TableRow getNotificationRow(String title, String text, Date datetime) {
+        return getNotificationRow(title, text, datetime, null);
+    }
+
+        public TableRow getNotificationRow(String title, String text){
+        return getNotificationRow(title, text, null, null);
     }
 }
