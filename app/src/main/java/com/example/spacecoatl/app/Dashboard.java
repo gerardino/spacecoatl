@@ -32,7 +32,7 @@ public class Dashboard extends Fragment {
     BroadcastReceiver _broadcastReceiver;
     private TextView _tvTime;
 
-
+    NotificationRowGenerator nrg;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,7 +48,8 @@ public class Dashboard extends Fragment {
         //});
 
 
-        NotificationRowGenerator nrg = new NotificationRowGenerator(view.getContext(), _sdfWatchTime);
+        nrg = new NotificationRowGenerator(view.getContext(), _sdfWatchTime);
+
         _tvTime = (TextView)view.findViewById(R.id._tvTime);
         _tvTime.setText(_sdfWatchTime.format(new Date()));
 
