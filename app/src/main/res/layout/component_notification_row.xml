@@ -10,24 +10,35 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@android:color/white"
             android:text="9:58"
             android:layout_alignParentRight="true"
 
             android:id="@+id/notificationTime" />
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="24dp"
+            android:padding="5dp"
+            android:background="@drawable/glyphicons_195_circle_info"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/image_badge"
+            />
 
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
+            android:textColor="@android:color/white"
+            android:text=""
+            android:layout_toRightOf="@+id/image_badge"
             android:layout_toLeftOf="@+id/notificationTime"
             android:id="@+id/notificationTitle" />
 
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Small Text"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text=""
             android:layout_toLeftOf="@+id/notificationTime"
             android:layout_below="@+id/notificationTitle"
             android:id="@+id/notificationText" />

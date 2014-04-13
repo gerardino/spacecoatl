@@ -20,6 +20,7 @@ import android.widget.TableLayout;
 import android.widget.TextView;
 
 import com.example.spacecoatl.app.components.NotificationRowGenerator;
+import com.example.spacecoatl.app.components.UtilFunctions;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -54,7 +55,7 @@ public class Dashboard extends Fragment {
         _tvTime.setText(_sdfWatchTime.format(new Date()));
 
         TableLayout tl = (TableLayout)(view.findViewById(R.id.notificationTable));
-        tl.addView(nrg.getNotificationRow("Hello world", "This is a quick test to see if stuff can be created"));
+        tl.addView(nrg.getNotificationRow("Current location", "90º 14º", null, R.drawable.glyphicons_340_globe));
 
 //        notificationIconHolder
 
@@ -68,24 +69,12 @@ public class Dashboard extends Fragment {
                 R.drawable.glyphicons_205_electricity,
                 R.drawable.glyphicons_252_oxygen_bottle};
 
-        float[] colorMatrix_Negative = {
-                -1.0f, 0, 0, 0, 255, //red
-                0, -1.0f, 0, 0, 255, //green
-                0, 0, -1.0f, 0, 255, //blue
-                0, 0, 0, 1.0f, 0 //alpha
-        };
 
         for(int i = 0; i < iconsToLoad.length; i++){
-            //To generate negative image
-            Paint MyPaint_Normal = new Paint();
-            Paint MyPaint_Negative = new Paint();
-            ColorFilter colorFilter_Negative = new ColorMatrixColorFilter(colorMatrix_Negative);
-
             Drawable d = view.getResources().getDrawable(iconsToLoad[i]);
-            d.setColorFilter(colorFilter_Negative);
 
             ImageView img = new ImageView(getActivity());
-            img.setImageDrawable(d);
+            img.setImageDrawable(UtilFunctions.InvertDrawable(d));
 //            img.setPadding(pixels/5, pixels/5, pixels/5, pixels/5);
             img.setMinimumWidth(pixels);
             img.setMinimumHeight(pixels);
