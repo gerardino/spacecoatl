@@ -6,7 +6,6 @@
     android:baselineAligned="false"
 
     android:background="@drawable/swept01"
-
     >
 
     <fragment
@@ -18,18 +17,17 @@
        />
 
     <LinearLayout
-    android:layout_width="0dp"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_weight=".7"
-    android:paddingTop="10dp"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight=".7"
+        android:paddingTop="10dp"
     >
-        <!--android:layout_weight=".7"-->
-        <!--android:layout_width="0dp"-->
         <fragment
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight=".7"
+            android:layout_marginTop="10dp"
 
             android:id="@+id/activities"
             class="com.example.spacecoatl.app.Notification"
@@ -39,34 +37,46 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:orientation="horizontal"
+            android:padding="@dimen/abc_action_bar_icon_vertical_padding"
+            android:background="@drawable/background_bottom"
+
             >
             <Button
-                android:layout_width="60dp"
+                android:layout_width="0dp"
+                android:layout_weight="0.25"
                 android:layout_height="match_parent"
                 android:text="F1"
+                android:background="@android:color/transparent"
                 android:id="@+id/actionF1"
                 />
             <Button
-                android:layout_width="60dp"
+                android:layout_width="0dp"
+                android:layout_weight="0.25"
                 android:layout_height="match_parent"
                 android:text="F2"
+                android:background="@android:color/transparent"
+                android:layout_marginLeft="5dp"
                 android:id="@+id/actionF2"
                 />
             <Button
-                android:layout_width="60dp"
+                android:layout_width="0dp"
+                android:layout_weight="0.25"
                 android:layout_height="match_parent"
                 android:text="F3"
+                android:background="@android:color/transparent"
+                android:layout_marginLeft="5dp"
                 android:id="@+id/actionF3"
                 />
             <Button
-                android:layout_width="60dp"
+                android:layout_width="0dp"
+                android:layout_weight="0.25"
                 android:layout_height="match_parent"
-                android:text="F1"
+                android:text="F4"
                 android:id="@+id/actionF4"
+                android:background="@android:color/transparent"
+                android:layout_marginLeft="5dp"
                 />
+
             </LinearLayout>
-
-
-
     </LinearLayout>
 </LinearLayout>
