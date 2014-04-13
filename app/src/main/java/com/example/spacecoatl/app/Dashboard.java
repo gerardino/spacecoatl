@@ -39,14 +39,6 @@ public class Dashboard extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_dashboard,
                 container, false);
-        //Button button = (Button) view.findViewById(R.id.button1);
-        //button.setOnClickListener(new View.OnClickListener() {
-        //  @Override
-        // public void onClick(View v) {
-        //   updateDetail();
-        // }
-        //});
-
 
         nrg = new NotificationRowGenerator(view.getContext(), _sdfWatchTime);
 
