@@ -1,18 +1,48 @@
 package com.example.spacecoatl.app;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
 
 
-public class Notification extends Card {
+public class Notification extends Activity {
+    Button sync, clearLog;
+    LinearLayout notificationListLayout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
+        notificationListLayout = (LinearLayout)findViewById(R.id.notificationListLayout);
+        sync = (Button)findViewById(R.id.syncButton);
+        clearLog = (Button)findViewById(R.id.clearLog);
+
+        sync.setOnClickListener(new View.OnClickListener() {
+            int i=0;
+
+            @Override
+            public void onClick(View view) {
+                //
+                LinearLayout element = (LinearLayout)getLayoutInflater().inflate(R.layout.notification_element,null);
+                Resources res = getResources();
+                ((TextView) element.findViewById(R.id.notificationText)).setText("i = " + i);
+                ((ImageView)element.findViewById(R.id.notificationIcon)).setImageDrawable(res.getDrawable(R.drawable.medical_icon));
+                notificationListLayout.addView(element, 0);
+                i++;
+
+            }
+        });
     }
+
+
 
 
     @Override
@@ -23,16 +53,5 @@ public class Notification extends Card {
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
 }
