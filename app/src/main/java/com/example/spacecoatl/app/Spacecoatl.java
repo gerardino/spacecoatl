@@ -4,9 +4,42 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.app.Fragment;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.content.res.Configuration;
+import android.view.WindowManager;
+import android.content.Intent;
+
+public class Spacecoatl extends Activity{
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_spacecoatl);
+    }
+
+    // if the wizard generated an onCreateOptionsMenu you can delete
+    // it, not needed for this tutorial
+
+    /*@Override
+    public void onRssItemSelected(String link) {
+        Card fragment = (Card) getFragmentManager()
+                .findFragmentById(R.id.activities);
+        if (fragment != null && fragment.isInLayout()) {
+            fragment.setText(link);
+        }
+    }*/
+}
 
 
-public class Spacecoatl extends ActionBarActivity {
+/*public class Spacecoatl extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +52,7 @@ public class Spacecoatl extends ActionBarActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.spacecoatl, menu);
+        //getMenuInflater().inflate(R.menu.spacecoatl, menu);
         return true;
     }
 
@@ -35,4 +68,4 @@ public class Spacecoatl extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-}
+}*/
